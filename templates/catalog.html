@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров | Онлайн-магазин</title>
+</head>
+<body class="container-fluid d-flex flex-column min-vh-100">
+    
+    <!-- Header -->
+    {% include 'components/header.html' %}
+
+    <!-- Основной контент страницы -->
+    <section class="catalog">
+
+        <h2>Товары</h2>
+        <div class="catalog-grid">
+            <!-- Цикл перебора товаров -->
+            {% for product in products %}
+            <div class="catalog-item-card">
+                <!-- Переход на страницу товара по id -->
+                <img class="catalog-item-image" src="{{ product.image_url }}" alt="{{ product.name }}">
+                <a href="{{ url_for('product', product_id=product.id) }}">
+                    <h3>{{ product.name }}</h3>
+                </a>
+                <p>{{ product.description }}</p>
+                <span>Цена: {{ product.price }} ₽</span>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Footer -->
+    {% include 'components/footer.html' %}
+
+</body>
+</html>
