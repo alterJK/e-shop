@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Доставка | Онлайн-магазин</title>
+    <!-- CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 <body class="container-fluid d-flex flex-column min-vh-100">
     
     <!-- Header -->
     {% include 'components/header.html' %}
+    <!-- Side Panel Menu -->
+    {% include 'components/sidepanel-menu.html' %}
    
     <!-- Основной контент страницы -->
     <main>
@@ -33,6 +37,8 @@
 
     <!-- Footer -->
     {% include 'components/footer.html' %}
+    
+    <script src="{{ url_for('static', filename='js/sidepanel-menu.js') }}"></script>
     
 </body>
 </html>
