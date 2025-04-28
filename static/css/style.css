@@ -1,0 +1,40 @@
+/* */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+/* css для компонента меню */
+.side-panel {
+    position: fixed;
+    top: 70px; /* Высота хедера */
+    right: 0;
+    width: 250px;
+    height: calc(100vh - 70px);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.side-panel.active {
+    transform: translateX(250px); /* Скрыть панель */
+}
+/* css для компонента хедэр */
+.header {
+    color:#323532;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+}
+/* css для компонента футер*/
+.footer {
+    margin-top: auto;
+    text-align: center;
+    color: #323532;
+    padding: 1rem 0;
+    z-index: 1001;
+}
