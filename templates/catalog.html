@@ -16,11 +16,11 @@
 
     <!-- Основной контент страницы -->
     <section class="catalog">
-
         <h2>Товары</h2>
         <div class="catalog-grid">
             <!-- Цикл перебора товаров -->
             {% for product in products %}
+            
             <div class="catalog-item-card">
                 <!-- Переход на страницу товара по id -->
                 <img class="catalog-item-image" src="{{ product.image_url }}" alt="{{ product.name }}">
@@ -29,15 +29,25 @@
                 </a>
                 <p>{{ product.description }}</p>
                 <span>Цена: {{ product.price }} ₽</span>
+                <button class="btn btn-primary details-btn" data-toggle="modal" data-target="#product-modal-{{ product.id }}">Подробнее</button>
             </div>
+            
+            <!-- Модальное окно для каждого товара -->
+            {% include 'components/product.html' %}
+
             {% endfor %}
         </div>
     </section>
 
     <!-- Footer -->
     {% include 'components/footer.html' %}
-
-    <script src="{{ url_for('static', filename='js/sidepanel-menu.js') }}"></script>
     
+    <script src="{{ url_for('static', filename='js/sidepanel-menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/product-modal.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

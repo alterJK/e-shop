@@ -2,6 +2,7 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
 /* css для компонента меню */
 .side-panel {
     position: fixed;
@@ -38,7 +39,7 @@ body {
     padding: 1rem 0;
     z-index: 1001;
 }
-/* */
+/* css для страницы каталога товаров */
 .catalog {
     width: 100%;
     margin: 0 auto;
@@ -90,4 +91,65 @@ body {
     .catalog-grid {
         grid-template-columns: repeat(1, minmax(150px, 1fr)); /* 1 колонка на маленьких экранах */
     }
+}
+/* css для модального окна с товаром */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.details-btn {
+    background-color: #FFD700;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.details-btn:hover {
+    background-color: #FFA500;
+}
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #fafafa;
+}
+
+.modal-body p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.modal.show {
+    display: block; /* Показываем модальное окно */
+}
+
+.modal-body img {
+    width: 60%; /* Автошира ширина */
+    height: auto; /* Сохраняет пропорции */
 }

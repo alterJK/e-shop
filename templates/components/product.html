@@ -1,0 +1,19 @@
+<!-- components/product-modal.html -->
+<div class="modal fade" id="product-modal-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="product-modal-label-{{ product.id }}" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="product-modal-label-{{ product.id }}">{{ product.name }}</h5>
+              <button type="button"class="btn btn-primary close-btn" data-dismiss="modal" data-target="#product-modal-{{ product.id }}">Закрыть</button>
+          </div>
+          <div class="modal-body">
+              <img src="{{ product.image_url }}" class="img-fluid mb-3" alt="{{ product.name }}">
+              <p>{{ product.description }}</p>
+              <p><strong>Цена:</strong> {{ product.price }} руб.</p>
+          </div>
+          <div class="modal-footer">
+              <button type="button"class="btn btn-primary buy-btn" data-dismiss="modal" data-target="#product-modal-{{ product.id }}">Купить</button>
+          </div>
+      </div>
+  </div>
+</div>
