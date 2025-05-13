@@ -131,3 +131,26 @@ body {
 .modal.show {
     display: block; /* Показываем модальное окно */
 }
+
+
+/* css для станицы о нас, контакты, доставка */
+.grid-container {
+    display: grid;
+    justify-content: center; /* Горизонтальное центрирование */
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Минимальная ширина 400 пикселей, далее растягивается пропорционально */
+}
+
+@media screen and (max-width: 768px) { /* Для мобильных устройств */
+    .grid-container {
+        grid-template-columns: 1fr; /* Одна колонка */
+    }
+}
+
+.grid-item {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    padding: 20px;
+    max-width: 500px; /* Максимальная ширина каждого блока */
+}

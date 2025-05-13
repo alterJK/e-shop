@@ -11,19 +11,24 @@
 </head>
 <body class="container-fluid d-flex flex-column min-vh-100">
     
-        <!-- Header -->
-        {% include 'components/header.html' %}
-        <!-- Side Panel Menu -->
-        {% include 'components/sidepanel-menu.html' %}
+    <!-- Header -->
+    {% include 'components/header.html' %}
+    <!-- Side Panel Menu -->
+    {% include 'components/sidepanel-menu.html' %}
 
-    <main>
-        <h2>Контакты</h2>
-        <address>
-            <strong>Адрес офиса:</strong><br>
-            г. Москва, ул. Тверская, д. 10, офис 501<br>
-            <strong>Телефон:</strong> +7 (495) 123-45-67<br>
-            <strong>Email:</strong> info@shop.ru
-        </address>
+    <!-- Основной контент страницы -->
+    <main role="main" class="flex-grow-1">
+        <section class="py-1 container grid-container">
+            <div class="grid-item contacts">
+                <h2>Контакты</h2>
+                <address>
+                    <strong>Адрес офиса:</strong><br>
+                    г. Москва, ул. Тверская, д. 10, офис 501<br>
+                    <strong>Телефон:</strong> +7 (495) 123-45-67<br>
+                    <strong>Email:</strong> info@shop.ru
+                </address>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
