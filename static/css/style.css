@@ -67,7 +67,7 @@ body {
     transform: scale(1.05);
 }
 .catalog-item-image {
-    width: 100%;
+    width: 50%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -103,53 +103,31 @@ body {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.details-btn {
-    background-color: #FFD700;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* css для изображения продукта */
+.product-image {
+  max-width: 50vw; /* Максимальная ширина 50% видимой области окна */
+  object-fit: contain; /* Сохраняет пропорции изображения */
 }
 
-.details-btn:hover {
-    background-color: #FFA500;
-}
-
+/* css для модального окна с карточкой продукта */
+/* Общие правила для всех модальных окон */
 .modal {
-    display: none; /* Скрыто по умолчанию */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+    overflow-y: auto; /* Прокрутка содержимого модального окна, если содержимое больше экрана */
     background-color: #fafafa;
 }
 
-.modal-body p {
-    line-height: 1.5;
-    font-size: 16px;
+/* Специальные правила для выравнивания по центру */
+.modal-dialog {
+  margin-top: -10vh !important;
 }
 
-.modal-title {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.modal-body img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
+/* Дополнительно можно изменить фон модального окна */
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
 
 .modal.show {
     display: block; /* Показываем модальное окно */
-}
-
-.modal-body img {
-    width: 60%; /* Автошира ширина */
-    height: auto; /* Сохраняет пропорции */
 }

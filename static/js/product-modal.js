@@ -1,5 +1,5 @@
 // Получаем кнопку и модальное окно
-var buttonsClose = document.querySelectorAll(".close-btn");
+var buttonsClose = document.querySelectorAll(".btn-close");
 var buttonsDetails = document.querySelectorAll(".details-btn");
 var modals = document.querySelectorAll(".modal");
 

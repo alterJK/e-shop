@@ -1,19 +1,26 @@
-<!-- components/product-modal.html -->
 <div class="modal fade" id="product-modal-{{ product.id }}" tabindex="-1" role="dialog" aria-labelledby="product-modal-label-{{ product.id }}" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="product-modal-label-{{ product.id }}">{{ product.name }}</h5>
-              <button type="button"class="btn btn-primary close-btn" data-dismiss="modal" data-target="#product-modal-{{ product.id }}">Закрыть</button>
-          </div>
-          <div class="modal-body">
-              <img src="{{ product.image_url }}" class="img-fluid mb-3" alt="{{ product.name }}">
-              <p>{{ product.description }}</p>
-              <p><strong>Цена:</strong> {{ product.price }} руб.</p>
-          </div>
-          <div class="modal-footer">
-              <button type="button"class="btn btn-primary buy-btn" data-dismiss="modal" data-target="#product-modal-{{ product.id }}">Купить</button>
-          </div>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header p-3 mb-3 bg-light"> 
+        <!-- Добавляем внутренний промежуток и подсветку фона -->
+        <h5 class="modal-title" id="product-modal-label-{{ product.id }}" class="img-fluid w-100 h-auto rounded product-image" alt="{{ product.name }}">{{ product.name }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
       </div>
+      <div class="modal-body row g-3">
+        <!-- Используем сетку Bootstrap для управления пространством -->
+        <div class="col-md-4">
+          <img src="{{ product.image_url }}" class="img-fluid rounded" alt="{{ product.name }}">
+        </div>
+        <div class="col-md-8">
+          <div class="mb-3">
+            <p><strong>Цена:</strong> {{ product.price }} руб.</p>
+            <p><strong>О товаре:</strong> {{ product.full_description }}</p>
+          </div>
+          <div class="mt-auto text-center"> <!-- Блок кнопки внизу -->
+            <button type="button" class="btn btn-primary">Добавить в корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
