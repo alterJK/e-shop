@@ -2,6 +2,7 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
 /* css для компонента меню */
 .side-panel {
     position: fixed;
@@ -38,7 +39,7 @@ body {
     padding: 1rem 0;
     z-index: 1001;
 }
-/* */
+/* css для страницы каталога товаров */
 .catalog {
     width: 100%;
     margin: 0 auto;
@@ -66,7 +67,7 @@ body {
     transform: scale(1.05);
 }
 .catalog-item-image {
-    width: 100%;
+    width: 50%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -90,4 +91,43 @@ body {
     .catalog-grid {
         grid-template-columns: repeat(1, minmax(150px, 1fr)); /* 1 колонка на маленьких экранах */
     }
+}
+/* css для модального окна с товаром */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* css для изображения продукта */
+.product-image {
+  max-width: 50vw; /* Максимальная ширина 50% видимой области окна */
+  object-fit: contain; /* Сохраняет пропорции изображения */
+}
+
+/* css для модального окна с карточкой продукта */
+/* Общие правила для всех модальных окон */
+.modal {
+    overflow-y: auto; /* Прокрутка содержимого модального окна, если содержимое больше экрана */
+    background-color: #fafafa;
+}
+
+/* Специальные правила для выравнивания по центру */
+.modal-dialog {
+  margin-top: -10vh !important;
+}
+
+/* Дополнительно можно изменить фон модального окна */
+.modal-content {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+.modal.show {
+    display: block; /* Показываем модальное окно */
 }

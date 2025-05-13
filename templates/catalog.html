@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог товаров | Онлайн-магазин</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- CSS -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
@@ -16,28 +18,42 @@
 
     <!-- Основной контент страницы -->
     <section class="catalog">
-
         <h2>Товары</h2>
         <div class="catalog-grid">
             <!-- Цикл перебора товаров -->
             {% for product in products %}
-            <div class="catalog-item-card">
-                <!-- Переход на страницу товара по id -->
-                <img class="catalog-item-image" src="{{ product.image_url }}" alt="{{ product.name }}">
-                <a href="{{ url_for('product', product_id=product.id) }}">
+            
+            <div class="catalog-item-card row no-gutters align-items-center">
+                <!-- Изображение слева -->
+                <div class="col-md-6 col-sm-12">
+                    <img src="{{ product.image_url }}" class="img-fluid rounded product-image" style="width: 100%; object-fit: cover;" alt="{{ product.name }}">
+                </div>
+                
+                <!-- Контент справа -->
+                <div class="col-md-6 col-sm-12 catalog-item-content px-3 py-2">
                     <h3>{{ product.name }}</h3>
-                </a>
-                <p>{{ product.description }}</p>
-                <span>Цена: {{ product.price }} ₽</span>
+                    <p>{{ product.short_description }}</p>
+                    <p>Цена: {{ product.price }} ₽</p>
+                    <button class="btn btn-primary details-btn mt-2" data-toggle="modal" data-target="#product-modal-{{ product.id }}">Подробнее</button>
+                </div>
             </div>
+                        
+            <!-- Модальное окно для каждого товара -->
+            {% include 'components/product.html' %}
+
             {% endfor %}
         </div>
     </section>
 
     <!-- Footer -->
     {% include 'components/footer.html' %}
-
-    <script src="{{ url_for('static', filename='js/sidepanel-menu.js') }}"></script>
     
+    <script src="{{ url_for('static', filename='js/sidepanel-menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/product-modal.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
